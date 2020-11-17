@@ -60,6 +60,7 @@ function getShopsArrayWithStock(data) {
             shopsNumberArr.push(keys);
         }
     }
+    return shopsNumberArr;
 }
 
 function getMaxStockInRegion() {
@@ -82,10 +83,6 @@ function getMaxStockInRegion() {
     }
 }
 
-
-getShopsArrayWithStock(data);
-getMaxStockInRegion(data);
-
 console.log("1 - получить название товара: ", getItemName(data));
-console.log("2 - получить массив номеров магазинов, в которых есть товары в наличии: ", shopsNumberArr);
-console.log("3 - найти максимальное количество товара в регионе, вернуть это количество и номер магазина: ", messageShopMaxStock);
+console.log("2 - получить массив номеров магазинов, в которых есть товары в наличии: ", getShopsArrayWithStock(data));
+console.log("3 - найти максимальное количество товара в регионе, вернуть это количество и номер магазина: ", getMaxStockInRegion(data));
