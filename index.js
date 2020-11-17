@@ -43,7 +43,6 @@ let data = {
 
 let itemName = "";
 let shopsNumberArr = [];
-let maxStock = [];
 let messageShopMaxStock = "";
 
 function getItemName(data) {
@@ -67,6 +66,7 @@ function getMaxStockInRegion() {
     let regionsArr = Object.entries(data.stock.stocks);
     let region = regionsArr[0];
     let availableShops = region[1];
+    let maxStock = [];
 
     for (let keys in availableShops) {
         if (Number(availableShops[keys]) > 0) {
@@ -81,6 +81,7 @@ function getMaxStockInRegion() {
             messageShopMaxStock = (`Магазин №${keys} имеет максимальный сток: ${maxStockValue} шт.`);
         }
     }
+    return messageShopMaxStock;
 }
 
 console.log("1 - получить название товара: ", getItemName(data));
